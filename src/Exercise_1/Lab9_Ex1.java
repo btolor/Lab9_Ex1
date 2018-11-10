@@ -14,13 +14,17 @@ public class Lab9_Ex1 {
     static Scanner scan = new Scanner(System.in);
     //User input method...
     public static void lines(){
-        int x;
+        String lines;
+        int x = 0;
         System.out.print("Enter the number lines: ");
-        x =scan.nextInt();
-        while(x < 1){         
-            System.out.print("Please enter a positive integer: ");
-            x = scan.nextInt();
-        }      
+        lines = scan.nextLine();
+        try {
+            x = Integer.parseInt(lines);
+        } catch (Exception e) {
+            System.out.println("Please enter a valid number!\n");
+            lines();
+        }
+   
         stars(x);
     }
 
